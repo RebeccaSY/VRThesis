@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Keyboard : MonoBehaviour
+{
+    public TMP_InputField inputField;
+    public GameObject normalButtons;
+    //public GameObject capsButtons;
+    //private bool caps;
+
+    void Start()
+    {
+        //caps = false;
+    }
+
+    public void InsertChar(string ch)
+    {
+        inputField.text += ch;
+    }
+
+    public void DeleteChar()
+    {
+        if (inputField.text.Length > 0)
+        {
+            inputField.text = inputField.text.Substring(0, inputField.text.Length - 1);
+        }
+    }
+    /*
+    public void CapsPressed()
+    {
+        if (!caps)
+        {
+            normalButtons.SetActive(false);
+            capsButtons.SetActive(true);
+            caps = true;
+        }
+        else
+        {
+            capsButtons.SetActive(false);
+            normalButtons.SetActive(true);
+            caps = false;
+        }
+    }*/
+}
